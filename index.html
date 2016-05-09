@@ -11,7 +11,7 @@
     <script src="SocialCount.ctrl.js"></script>
     <script src="SocialCount.srv.js"></script>
     <script src="Provider.srv.js"></script>
-    <link rel="stylesheet" type="text/css" href="main.css">
+
 </head>
 
 <body ng-controller="SocialCountController as vm">
@@ -20,8 +20,7 @@
         <div class="row">
             <nav>
                 <div class="nav-wrapper #4db6ac teal lighten-1 z-depth-3">
-                    <a href="#" class="brand-logo"> Social Counter</a>
-
+                    <a href="#" class="brand-logo center"> Social Counter</a>
                 </div>
             </nav>
         </div>
@@ -37,7 +36,7 @@
                 </form>
             </div>
             <!-- Pages -->
-            <div class="col s5">
+            <div class="col s5 z-depth-1">
                 Urls
                 <a class="btn-floating btn-medium waves-effect waves-light red right z-depth-3" ng-click="vm.addUrl()"><i class="material-icons">add</i></a>
                 <form>
@@ -48,10 +47,10 @@
             </div>
             <!-- Results -->
             <div class="col s5">
-                <button class="btn waves-effect waves-light z-depth-5" type="submit" name="action" ng-click="vm.getSocialCount()">Go!
-                    <i class="material-icons right">send</i>
-                </button>
-                <form>
+                <form ng-submit="vm.getSocialCount()">
+                    <button class="btn waves-effect waves-light z-depth-3" type="submit" name="action" >Go!
+                        <i class="material-icons right">send</i>
+                    </button>
                     <div ng-repeat="result in vm.results track by $index">
                         <h4>{{result.provider}}</h4>
                         <div ng-repeat="page in result.pages track by $index">
