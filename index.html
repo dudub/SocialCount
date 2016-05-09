@@ -1,0 +1,77 @@
+<!doctype html>
+<html ng-app="SocialCount">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="app.js"></script>
+    <script src="SocialCount.ctrl.js"></script>
+    <script src="SocialCount.srv.js"></script>
+    <script src="Provider.srv.js"></script>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body ng-controller="SocialCountController as vm">
+    <div class="container">
+        <!-- Page Content goes here -->
+        <div class="row">
+            <nav>
+                <div class="nav-wrapper #4db6ac teal lighten-1">
+                    <a href="#" class="brand-logo">Social Counter</a>
+
+                </div>
+            </nav>
+        </div>
+        <div class="row">
+            <!-- Providers -->
+            <div class="col s2">
+                Providers
+                <form>
+                    <p ng-repeat="provider in vm.providers">
+                        <input type="checkbox" id="{{provider.name}}" ng-model="provider.selected" />
+                        <label for="{{provider.name}}">{{provider.name}}</label>
+                    </p>
+                </form>
+            </div>
+            <!-- Pages -->
+            <div class="col s5">
+                Urls
+                <a class="btn-floating btn-medium waves-effect waves-light red right" ng-click="vm.addUrl()"><i class="material-icons">add</i></a>
+                <form>
+                    <div ng-repeat="url in vm.urls track by $index" class="input-field col s12">
+                        <input placeholder="for example: http://www..." id="url.url" type="text" ng-model="url.url">
+                    </div>
+                </form>
+            </div>
+            <!-- Results -->
+            <div class="col s5">
+                <button class="btn waves-effect waves-light" type="submit" name="action" ng-click="vm.getSocialCount()">Go!
+                    <i class="material-icons right">send</i>
+                </button>
+                <form>
+                    <div ng-repeat="result in vm.results track by $index">
+                        <h4>{{result.provider}}</h4>
+                        <div ng-repeat="page in result.pages track by $index">
+                            <div class="card #e0f2f1 teal lighten-3">
+                                <div class="card-content white-text">
+                                    <span class="card-content">{{page.page}}</span>
+                                </div>
+                                <div class="card-action">
+                                    <div class="collection">
+                                        <p class="collection-item" ng-repeat="counter in page.counters track by $index">{{counter.name}}<span class="badge">{{counter.count|number}}</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            </form>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
