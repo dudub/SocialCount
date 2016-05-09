@@ -31,30 +31,6 @@
 
         }
 
-        /*        function promisesHandler(promises, callback) {
-                    $q.all(promises).then(function(results) {
-
-                        var pages = [];
-                        results.forEach(function(item) {
-                            var page = findPage(pages, item.page);
-                            if (!page) {
-                                page = {
-                                    page: item.page,
-                                    providers: []
-                                };
-                                pages.push(page);
-                            }
-
-                            page.providers.push({
-                                provider: item.provider,
-                                counters: item.data
-                            });
-                        });
-
-                        return callback(pages);
-                    });
-                }*/
-
         function promisesHandler(promises, callback) {
             $q.all(promises).then(function(results) {
 
@@ -96,13 +72,6 @@
             });
             return result;
         }
-
-/*        function findPage(arr, pageUrl) {
-            var result = arr.find(function(item) {
-                return item.page === pageUrl;
-            });
-            return result;
-        }*/
 
         function getProviderUrl(provider, page) {
             var providerConfig = ProviderService.getProviderConfig(provider);

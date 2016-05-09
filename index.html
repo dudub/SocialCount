@@ -19,8 +19,8 @@
         <!-- Page Content goes here -->
         <div class="row">
             <nav>
-                <div class="nav-wrapper #4db6ac teal lighten-1">
-                    <a href="#" class="brand-logo">Social Counter</a>
+                <div class="nav-wrapper #4db6ac teal lighten-1 z-depth-3">
+                    <a href="#" class="brand-logo"> Social Counter</a>
 
                 </div>
             </nav>
@@ -39,7 +39,7 @@
             <!-- Pages -->
             <div class="col s5">
                 Urls
-                <a class="btn-floating btn-medium waves-effect waves-light red right" ng-click="vm.addUrl()"><i class="material-icons">add</i></a>
+                <a class="btn-floating btn-medium waves-effect waves-light red right z-depth-3" ng-click="vm.addUrl()"><i class="material-icons">add</i></a>
                 <form>
                     <div ng-repeat="url in vm.urls track by $index" class="input-field col s12">
                         <input placeholder="for example: http://www..." id="url.url" type="text" ng-model="url.url">
@@ -48,16 +48,16 @@
             </div>
             <!-- Results -->
             <div class="col s5">
-                <button class="btn waves-effect waves-light" type="submit" name="action" ng-click="vm.getSocialCount()">Go!
+                <button class="btn waves-effect waves-light z-depth-5" type="submit" name="action" ng-click="vm.getSocialCount()">Go!
                     <i class="material-icons right">send</i>
                 </button>
                 <form>
                     <div ng-repeat="result in vm.results track by $index">
                         <h4>{{result.provider}}</h4>
                         <div ng-repeat="page in result.pages track by $index">
-                            <div class="card #e0f2f1 teal lighten-3">
+                            <div class="card #e0f2f1 teal lighten-3 z-depth-5">
                                 <div class="card-content white-text">
-                                    <span class="card-content">{{page.page}}</span>
+                                    <span class="card-content ">{{page.page}}</span>
                                 </div>
                                 <div class="card-action">
                                     <div class="collection">

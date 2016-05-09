@@ -6,7 +6,7 @@
     function SocialCountController($http, SocialCountService, ProviderService) {
         var vm = this;
 
-        vm.urls = [{ url: 'http://getbootstrap.com' }, { url: 'http://materializecss.com' }];
+        vm.urls = [{ url: 'http://getbootstrap.com' }, { url: 'http://materializecss.com' }]; //contains examples...
         vm.results = [];
         vm.providers = [];
         vm.getSocialCount = getSocialCount;
