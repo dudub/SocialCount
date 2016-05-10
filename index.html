@@ -17,15 +17,18 @@
     <div class="container">
         <!-- Page Content goes here -->
         <div class="row">
-            <nav>
-                <div class="nav-wrapper #e3f2fd blue z-depth-3">
-                    <a href="#" class="brand-logo center"> Social Counter</a>
-                </div>
-            </nav>
+            <div class="col s12 m12 l12">
+                <nav>
+                    <div class="nav-wrapper #e3f2fd blue z-depth-3">
+                        <a href="#" class="brand-logo center"> Social Counter</a>
+                    </div>
+                </nav>
+            </div>
         </div>
         <div class="row">
             <!-- Providers -->
-            <div class="col s12 m12 l2"> <!-- col s2 -->
+            <div class="col s12 m12 l2">
+                <!-- col s2 -->
                 Providers
                 <form>
                     <p ng-repeat="provider in vm.providers">
@@ -35,7 +38,8 @@
                 </form>
             </div>
             <!-- Pages -->
-            <div class="col s12 m12 l5 z-depth-1"> <!-- col s5 z-depth-1 -->
+            <div class="col s12 m12 l5 z-depth-1">
+                <!-- col s5 z-depth-1 -->
                 Urls
                 <a class="btn-floating btn-medium waves-effect waves-light red right z-depth-3" ng-click="vm.addUrl()"><i class="material-icons">add</i></a>
                 <form>
@@ -45,11 +49,14 @@
                 </form>
             </div>
             <!-- Results -->
-            <div class="col s12 m5 l5"> <!-- col s5 -->
-                <form ng-submit="vm.getSocialCount()">
-                    <button class="btn waves-effect #ffe57f amber accent-3 waves-light z-depth-3" type="submit" name="action">Go!
-                        <i class="material-icons right">send</i>
-                    </button>
+            <div class="col s12 m12 l5">
+                <!-- col s5 -->
+         
+                    <section style="padding:5px">
+                        <button class="btn waves-effect #ffe57f amber accent-3 waves-light center z-depth-3" type="submit" ng-click="vm.getSocialCount()" name="action">Go!
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </section>
                     <div class="preloader-wrapper active right" ng-show="vm.loading">
                         <div class="spinner-layer spinner-red-only">
                             <div class="circle-clipper left">
@@ -64,9 +71,9 @@
                         </div>
                     </div>
                     <div ng-repeat="result in vm.results track by $index">
-                        <h4>{{result.provider}}</h4>
+                        <h4 class="center">{{result.provider}}</h4>
                         <div ng-repeat="page in result.pages track by $index">
-                            <div class="card  z-depth-5">
+                            <div class="card z-depth-5">
                                 <div class="card-content blue-text">
                                     <span class="card-content truncate">{{page.page}}</span>
                                 </div>
@@ -79,7 +86,7 @@
                         </div>
                     </div>
                 </div>
-            </form>
+         
         </div>
     </div>
     </div>
