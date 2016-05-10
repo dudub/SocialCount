@@ -1,5 +1,5 @@
 # SocialCount
-Get social networks counters for specific pages (PlayBuzz homework)
+Get social networks counters for specific pages
 
 ### Installation:
 Copy files to your local directory and open the 'index.html' file in your browser.
