@@ -11,9 +11,9 @@
         vm.providers = [];
         vm.getSocialCount = getSocialCount;
         vm.addUrl = addUrl;
-
+        vm.loading = false;
         activate();
-        
+
         return vm;
 
         ///////////////////////
@@ -28,13 +28,13 @@
         }
 
         function getSocialCount() {
-
+            showLoader();
             vm.results = [];
 
             var providers = getSelectedProviders();
-            if(providers.length == 0){
-            	alert('Please select some provider and try again...');
-            	return;
+            if (providers.length == 0) {
+                alert('Please select some provider and try again...');
+                return;
             }
 
             var urls = vm.urls.map(function(u) {
@@ -54,6 +54,15 @@
 
         function getSocialCallback(data) {
             vm.results = data;
+            hideLoader();
+        }
+
+        function showLoader() {
+            vm.loading = true;
+        }
+
+        function hideLoader() {
+            vm.loading = false;
         }
     }
 
