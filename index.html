@@ -11,7 +11,6 @@
     <script src="SocialCount.ctrl.js"></script>
     <script src="SocialCount.srv.js"></script>
     <script src="Provider.srv.js"></script>
-
 </head>
 
 <body ng-controller="SocialCountController as vm">
@@ -19,7 +18,7 @@
         <!-- Page Content goes here -->
         <div class="row">
             <nav>
-                <div class="nav-wrapper #4db6ac teal lighten-1 z-depth-3">
+                <div class="nav-wrapper #e3f2fd blue z-depth-3">
                     <a href="#" class="brand-logo center"> Social Counter</a>
                 </div>
             </nav>
@@ -48,13 +47,13 @@
             <!-- Results -->
             <div class="col s5">
                 <form ng-submit="vm.getSocialCount()">
-                    <button class="btn waves-effect waves-light z-depth-3" type="submit" name="action" >Go!
+                    <button class="btn waves-effect #ffe57f amber accent-3 waves-light z-depth-3" type="submit" name="action">Go!
                         <i class="material-icons right">send</i>
                     </button>
                     <div ng-repeat="result in vm.results track by $index">
                         <h4>{{result.provider}}</h4>
                         <div ng-repeat="page in result.pages track by $index">
-                            <div class="card #e0f2f1 teal lighten-3 z-depth-5">
+                            <div class="card #e3f2fd blue lighten-2 z-depth-3">
                                 <div class="card-content white-text">
                                     <span class="card-content ">{{page.page}}</span>
                                 </div>

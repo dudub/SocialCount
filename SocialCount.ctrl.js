@@ -13,7 +13,7 @@
         vm.addUrl = addUrl;
 
         activate();
-
+        
         return vm;
 
         ///////////////////////
