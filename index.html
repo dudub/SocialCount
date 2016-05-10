@@ -50,6 +50,19 @@
                     <button class="btn waves-effect #ffe57f amber accent-3 waves-light z-depth-3" type="submit" name="action">Go!
                         <i class="material-icons right">send</i>
                     </button>
+                    <div class="preloader-wrapper active right" ng-show="vm.loading">
+                        <div class="spinner-layer spinner-red-only">
+                            <div class="circle-clipper left">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="gap-patch">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="circle-clipper right">
+                                <div class="circle"></div>
+                            </div>
+                        </div>
+                    </div>
                     <div ng-repeat="result in vm.results track by $index">
                         <h4>{{result.provider}}</h4>
                         <div ng-repeat="page in result.pages track by $index">
@@ -67,19 +80,6 @@
                     </div>
             </div>
             </form>
-            <div class="preloader-wrapper active" ng-show="vm.loading">
-                <div class="spinner-layer spinner-red-only">
-                    <div class="circle-clipper left">
-                        <div class="circle"></div>
-                    </div>
-                    <div class="gap-patch">
-                        <div class="circle"></div>
-                    </div>
-                    <div class="circle-clipper right">
-                        <div class="circle"></div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
     </div>
